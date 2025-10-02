@@ -1,17 +1,17 @@
-import type GroupInterface from '@/types/GroupInterface';
+import type StudentInterface from '@/types/StudentInterface';
 
-export const getGroupsApi = async (): Promise<GroupInterface[]> => {
+export const getStudentsApi = async (): Promise<StudentInterface[]> => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API}groups`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API}students`);
 
     if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status}${response.statusText}`);
     }
-    const groups = await response.json() as GroupInterface[];
-    return groups;
+    const students = await response.json() as StudentInterface[];
+    return students;
   }
   catch (err) {
-    console.log('>>> getGroupsApi', err);
-    return [] as GroupInterface[];
+    console.log('>>> getStudentsApi', err);
+    return [] as StudentInterface[];
   }
 };
