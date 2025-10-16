@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './Menu.module.scss';
 
 const Menu = (): React.ReactElement => {
-  const pathname = usePathname ();
+  const pathname = usePathname();
   return (
     <nav className={styles.Menu}>
       <div className={pathname === '/' ? styles.linkActive : ''}>
